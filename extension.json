@@ -1,0 +1,624 @@
+  {
+  	"displayName": "D&B-Visitor-Intelligence",
+  	"name": "dnb-launch-extension",
+  	"version": "1.0.0",
+  	"description": "Analyze your unknown visitors and convert them into leads.",
+  	"author": {
+  		"name": "D&B",
+  		"url": "http://www.dnb.com/",
+  		"email":"Perumalvi@dnb.com"
+  	},
+  	"viewBasePath": "src/view/",
+  	"iconPath": "src/images/dnblogo.svg",
+  	"actions": [{
+  		"name": "calldnbapi",
+  		"displayName": "callDnbapi",
+  		"libPath": "src/lib/actions/calldnbapi.js",
+  		"schema": {
+  			"$schema": "http://json-schema.org/draft-04/schema#",
+  			"type": "object",
+  			"properties": {
+  				"name": {
+  					"type": "string"
+  				}
+  			},
+  			"additionalProperties": false
+  		}
+  	}],
+  	"dataElements": [{
+  			"name": "duns",
+  			"displayName": "duns",
+  			"libPath": "src/lib/dataElements/duns.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"duns": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "parentduns",
+  			"displayName": "parentDuns",
+  			"libPath": "src/lib/dataElements/parentDuns.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"parentduns": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "domesticultimateduns",
+  			"displayName": "domesticUltimateDuns",
+  			"libPath": "src/lib/dataElements/domesticUltimateDuns.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"domesticultimateduns": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "ultimateduns",
+  			"displayName": "ultimateDuns",
+  			"libPath": "src/lib/dataElements/ultimateDuns.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"ultimateduns": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companyname",
+  			"displayName": "companyName",
+  			"libPath": "src/lib/dataElements/companyName.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companyname": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companyaddress",
+  			"displayName": "companyAddress",
+  			"libPath": "src/lib/dataElements/companyAddress.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companyaddress": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companycity",
+  			"displayName": "companyCity",
+  			"libPath": "src/lib/dataElements/companyCity.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companycity": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companystate",
+  			"displayName": "companyState",
+  			"libPath": "src/lib/dataElements/companyState.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companystate": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companyzip5",
+  			"displayName": "companyzip5",
+  			"libPath": "src/lib/dataElements/companyZip5.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companyzip5": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companyzip4",
+  			"displayName": "companyZip4",
+  			"libPath": "src/lib/dataElements/companyZip4.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companyzip4": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companycounty",
+  			"displayName": "companyCounty",
+  			"libPath": "src/lib/dataElements/companyCounty.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companycounty": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companymsa",
+  			"displayName": "companyMsa",
+  			"libPath": "src/lib/dataElements/companyMsa.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companymsa": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companyregion",
+  			"displayName": "companyRegion",
+  			"libPath": "src/lib/dataElements/companyRegion.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companyregion": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "companycountry",
+  			"displayName": "companyCountry",
+  			"libPath": "src/lib/dataElements/companyCountry.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"companycountry": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "fortune1000",
+  			"displayName": "fortune1000",
+  			"libPath": "src/lib/dataElements/fortune1000.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"fortune1000": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "salesannual",
+  			"displayName": "salesAnnual",
+  			"libPath": "src/lib/dataElements/salesAnnual.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"salesannual": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "salesannualnum",
+  			"displayName": "salesAnnualNum",
+  			"libPath": "src/lib/dataElements/salesAnnualNum.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"salesannualnum": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "employeesatlocation",
+  			"displayName": "employeesAtLocation",
+  			"libPath": "src/lib/dataElements/employeesAtLocation.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"employeesatlocation": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "employeesatlocationnum",
+  			"displayName": "employeesAtLocationNum",
+  			"libPath": "src/lib/dataElements/employeesAtLocationNum.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"employeesatlocationnum": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "employeesinalllocations",
+  			"displayName": "employeesInAllLocations",
+  			"libPath": "src/lib/dataElements/employeesInAllLocations.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"employeesinalllocations": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "employeesinalllocationsnum",
+  			"displayName": "employeesInAllLocationsNum",
+  			"libPath": "src/lib/dataElements/employeesInAllLocationsNum.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"employeesinalllocationsnum": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "familytreesize",
+  			"displayName": "familyTreeSize",
+  			"libPath": "src/lib/dataElements/familyTreeSize.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"familytreesize": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "familytreesizenum",
+  			"displayName": "familyTreeSizeNum",
+  			"libPath": "src/lib/dataElements/familyTreeSizeNum.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"familytreesizenum": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "networth",
+  			"displayName": "networth",
+  			"libPath": "src/lib/dataElements/networth.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"networth": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "networthnum",
+  			"displayName": "networthNum",
+  			"libPath": "src/lib/dataElements/networthNum.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"networthnum": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "walletsize",
+  			"displayName": "walletSize",
+  			"libPath": "src/lib/dataElements/walletSize.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"walletsize": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "cardofferresponsiveness",
+  			"displayName": "cardOfferResponsiveness",
+  			"libPath": "src/lib/dataElements/cardOfferResponsiveness.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"cardofferresponsiveness": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "propensityforloan",
+  			"displayName": "propensityForLoan",
+  			"libPath": "src/lib/dataElements/propensityForLoan.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"propensityforloan": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "propensityforlease",
+  			"displayName": "propensityForLease",
+  			"libPath": "src/lib/dataElements/propensityForLease.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"propensityforlease": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "propensityforloc",
+  			"displayName": "propensityForLoc",
+  			"libPath": "src/lib/dataElements/propensityForLoc.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"propensityforloc": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "itexpense",
+  			"displayName": "itExpense",
+  			"libPath": "src/lib/dataElements/itExpense.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"itexpense": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "telecomspend",
+  			"displayName": "telecomSpend",
+  			"libPath": "src/lib/dataElements/telecomSpend.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"telecomspend": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "techofficedemand",
+  			"displayName": "techOfficeDemand",
+  			"libPath": "src/lib/dataElements/techOfficeDemand.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"techofficedemand": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "delinquencyrate",
+  			"displayName": "delinquencyRate",
+  			"libPath": "src/lib/dataElements/delinquencyRate.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"delinquencyrate": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "howtheypay",
+  			"displayName": "howTheyPay",
+  			"libPath": "src/lib/dataElements/howTheyPay.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"howtheypay": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "marketability",
+  			"displayName": "marketability",
+  			"libPath": "src/lib/dataElements/marketability.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"marketability": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "industrynaics",
+  			"displayName": "industryNaics",
+  			"libPath": "src/lib/dataElements/industryNaics.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"industrynaics": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "industrysic",
+  			"displayName": "industrySic",
+  			"libPath": "src/lib/dataElements/industrySic.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"industrysic": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "naicscodes",
+  			"displayName": "naicsCodes",
+  			"libPath": "src/lib/dataElements/naicsCodes.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"naicscodes": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		}, {
+  			"name": "siccodes",
+  			"displayName": "sicCodes",
+  			"libPath": "src/lib/dataElements/sicCodes.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"siccodes": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+  		},
+  		{
+  			"name": "checktimestamp",
+  			"displayName": "checkTimeStamp",
+  			"libPath": "src/lib/dataElements/checkTimeStamp.js",
+  			"schema": {
+  				"$schema": "http://json-schema.org/draft-04/schema#",
+  				"type": "object",
+  				"properties": {
+  					"checktimestamp": {
+  						"type": "string"
+  					}
+  				},
+  				"additionalProperties": false
+  			}
+
+  		}
+  	],
+  	"configuration": {
+  		"viewPath": "configuration/configuration.html",
+  		"schema": {
+  			"$schema": "http://json-schema.org/draft-04/schema#",
+  			"type": "object",
+  			"properties": {
+  				"apikey": {
+  					"type": "string",
+  					"minLength": 1
+  				}
+  			},
+  			"required": [
+  				"apikey"
+  			],
+  			"additionalProperties": false
+  		}
+  	}
+
+  }

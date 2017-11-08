@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+		<style>
+		
+			.title{
+			    color: #000;
+				font-size: 17px;
+				font-weight:bold;			
+				margin-right:20px;
+				position:relative
+			}
+			
+					
+			.moveimg {
+				min-width:250px;
+				min-height:250px;
+			}
+			.alignbody{
+				font-family:Segoe UI;
+				margin-left:50px;
+				margin-top:40px; 
+				margin-left:10px;
+				margin-bottom:20px;
+				border-radius: 10px;
+				width: 90%;	
+				overflow-y:auto;				
+			}
+			.maindiv{
+				height: 300px;
+				margin-top: 30px;
+				min-width: 900px;
+				overflow-x: auto;
+				white-space: nowrap;
+				border: 1px solid #005172;
+			}
+			
+
+		</style>
+	</head>
+	<body class="alignbody">	
+		<div class="maindiv">
+			<div style="float: left;margin-top: 65px;margin-left: 30px;min-width:570px">
+				<h4 class="title" style="height:20px;color: #005172;">D&amp;B Visitor Intelligence – embedded within Adobe Marketing Cloud</h4>
+				<label for="apikey" style="float:left;margin-right:30px;padding:2px">D&amp;B Visitor Intelligence API Key</label>
+				<input type="text" id="apikey" class="form-control" placeholder="Required" style="height:23px;width:200px">
+				<h4 style="font-size:11px">Don't have an API Key ? <a style="text-decoration:underline" target="_blank" href="http://www.dnb.com/marketing/media/adobe-get-api.html">Click here</a>	 </h4>
+			</div>		
+			<div style="min-width:290px;float: right;"><img src="iptracking.png" class="moveimg" style="margin-right:40px;"> </div>
+		</div>
+		<script>
+			window.extensionBridge.register({
+			  init: function(info) {
+				document.getElementById('apikey').value = (info.settings && info.settings.apikey) || '';
+			  },
+			  getSettings: function() {
+				localStorage.setItem('apikey',document.getElementById('apikey').value);
+				return {
+				  apikey: document.getElementById('apikey').value || ''
+				};
+			  },
+			  validate: function() {
+			 	 if(document.getElementById('apikey').value){
+			 		return true;
+			 	 }else{
+			  		return false;
+			 	 }
+
+			  }
+			});
+		</script>
+</body>
+</html>
+
